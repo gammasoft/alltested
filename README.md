@@ -1,6 +1,8 @@
 alltested
 =========
 
+[![Build Status](https://travis-ci.org/gammasoft/alltested.png?branch=master)](https://travis-ci.org/gammasoft/alltested)
+
 Ensures every method within every .js file has a correponding test
 
 ### Installation
