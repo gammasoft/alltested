@@ -51,7 +51,7 @@ function readDirectoryRecursively(directoryPath, options, callback){
     contents.forEach(function(content){
         var contentPath = path.join(directoryPath, content);
         
-        if( fs.lstatSync(contentPath).isDirectory() ) {
+        if( fs.lstatSync(contentPath).isDirectory() && contentPath.indexOf("node_modules") === -1) {
             readDirectoryRecursively(contentPath, options, callback);
         } else if ( shouldBeValidated(contentPath, options) ) {
             callback(contentPath);
