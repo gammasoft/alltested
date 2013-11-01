@@ -17,5 +17,8 @@
   ],
   "author": "Gammasoft Desenvolvimento de Software Ltda <contact@gammasoft.com.br>",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "nodeunit": "~0.8.1"
+  }
 }
