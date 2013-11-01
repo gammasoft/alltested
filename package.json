@@ -4,7 +4,7 @@
   "description": "Ensures every method within every .js file has a correponding test",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit ./tests/index.js"
+    "test": "nodeunit ./tests/indexTest.js"
   },
   "repository": {
     "type": "git",

@@ -1,11 +1,20 @@
 var fs = require('fs'),
     path = require('path'),
+    util = require('util'),
     assert = require('assert');
 
 module.exports = function(appPath, testsPath, options){
-    if( typeof options === "undefined" ) {
-        options = { };
+    if ( typeof testsPath === "object" ) {
+        options = testsPath;
+        testsPath = undefined;
     }
+    
+    if ( typeof testsPath === "undefined" ) {
+        testsPath = appPath;
+        appPath = path.resolve(path.join(testsPath, '/..'));
+    }
+    
+    options = parseOptions(options);
     
     readDirectoryRecursively(appPath, options, function(modulePath){
         if( modulePath.indexOf(testsPath) !== -1 ) return;
@@ -32,7 +41,7 @@ function ensureModuleExistsAndHaveAllTheTests(appPath, modulePath, testPath) {
         }
     } else {
         var mainTestName = path.basename(modulePath, path.extname(modulePath));
-        assert.ok(mainTestName in test, 'Module "' + moduleName + '" does not expose a function, in this case a test named "' + mainTestName + '" is required');
+        assert.ok(mainTestName in test, 'Module "' + moduleName + '" does not expose an object, in this case a test named "' + mainTestName + '" is required');
     }
 }
 
@@ -51,5 +60,24 @@ function readDirectoryRecursively(directoryPath, options, callback){
 }
 
 function shouldBeValidated(filePath, options) {
-    return path.extname(filePath) === '.js';
+    var shouldBeIgnored = options.ignore.some(function(ignore){
+        if(util.isRegExp(ignore))
+            return ignore.test(filePath);
+        
+        return filePath.indexOf(ignore) !== -1;
+    });
+    
+    return !shouldBeIgnored && path.extname(filePath) === '.js';
+}
+
+function parseOptions(options) {
+    if(typeof options === 'undefined') {
+        options = {};
+    }
+    
+    var defaults = {
+        ignore: options.ignore || []        
+    };
+    
+    return defaults;
 }
