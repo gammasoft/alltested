@@ -84,6 +84,6 @@ module.exports = {
 
 -------------------------------------
 
-**Any further question/bugs/etc, please head straight to the [issues page](https://github.com/gammasoft/alltested/issues)**
+**Any further question/bugs/etc, please head straight to the [issues page](https://github.com/gammasoft/alltested/issues). You know the drill!**
 
 ### License MIT
