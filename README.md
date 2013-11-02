@@ -1,6 +1,8 @@
 alltested
 =========
 
+[![NPM](https://nodei.co/npm/alltested.png)](https://nodei.co/npm/alltested/)
+
 [![Build Status](https://travis-ci.org/gammasoft/alltested.png?branch=master)](https://travis-ci.org/gammasoft/alltested)
 
 **Ensures that every method within every .js file has a correponding test. Works with [nodeunit](https://github.com/caolan/nodeunit) tests.**
