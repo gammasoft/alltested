@@ -4,7 +4,7 @@
   "description": "Ensures every method within every .js file has a correponding test",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt travis --verbose"
   },
   "repository": {
     "type": "git",

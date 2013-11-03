@@ -37,4 +37,6 @@ module.exports = function(grunt) {
         'jshint',
         'nodeunit'
     ]);
+
+    grunt.registerTask('travis', ['test']);
 };
