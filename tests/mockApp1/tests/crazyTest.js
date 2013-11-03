@@ -1,5 +1,5 @@
 module.exports = {
-    "crazy": function(test){
+    'crazy': function(test){
         test.done();
     }
 };

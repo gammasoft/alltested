@@ -4,23 +4,25 @@ var alltested = require('../index'),
 
 module.exports = {
     index: {
-        "Test the tester": function(test){
-            alltested(__dirname);
+        'Test the tester': function(test){
+            alltested(__dirname, {
+                ignore: ['Gruntfile.js']
+            });
             
             test.done();
         },    
         
-        "Ensure this works": function(test){
+        'Ensure this works': function(test){
             var appPath = path.join(__dirname, '/mockApp1');
             
             alltested(appPath, path.join(appPath, '/tests'), {
-                ignore: ["iDontNeedTests.js"]
+                ignore: ['iDontNeedTests.js']
             });
             
             test.done();
         },
         
-        "Will throw exception in case there is no test file for a module": function(test){
+        'Will throw exception in case there is no test file for a module': function(test){
             var appPath = path.join(__dirname, '/mockApp2');
             
             test.ok(fs.existsSync(path.join(appPath, 'notSoAwesome.js')));  
@@ -33,7 +35,7 @@ module.exports = {
             test.done();
         },
         
-        "Will throw exception in case there is no test case for a module property": function(test){
+        'Will throw exception in case there is no test case for a module property': function(test){
             var appPath = path.join(__dirname, '/mockApp3');
             
             test.ok(fs.existsSync(path.join(appPath, 'foo.js')));  

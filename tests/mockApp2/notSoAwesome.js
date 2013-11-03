@@ -1,3 +1,3 @@
 module.exports.notReallyAwesome = function() {
-    return "foo bar";
+    return 'foo bar';
 }; 

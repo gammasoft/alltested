@@ -4,7 +4,7 @@
   "description": "Ensures every method within every .js file has a correponding test",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit ./tests/indexTest.js"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,9 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "nodeunit": "~0.8.1"
+    "nodeunit": "~0.8.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-nodeunit": "~0.2.2"
   }
 }
