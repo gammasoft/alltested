@@ -28,7 +28,7 @@ Call `alltested` from within one of your tests.
 
 - appDirectory: the path where your app files are at
 - testsDirectory: the path where *alltested* will look for your test files
-- options: a hash with options. Example above.
+- options: a hash with options. Example above (more options will be added later).
 
 ```javascript
 var options = {
